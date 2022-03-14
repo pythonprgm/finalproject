@@ -10,10 +10,34 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url  'flowerapp:allproduct' %}">home </a>
         </li>
+        <li class="nav-item">
+           <a class="nav-link" href="{% url  'details:add' %}">Register </a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="{% url  'details:login' %}">Login </a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" href="{% url  'details:logout' %}">Logout </a>
+        </li>
+        <li>
+        <li class="nav-item dropdown  {% if 'flowerapp' in request.path %} active {% endif %}" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Branches
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-content">
+              <a href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a><br>
+              <a href="https://en.wikipedia.org/wiki/Kollam">Kollam</a><br>
+              <a href="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</a>
+              <a href="https://en.wikipedia.org/wiki/Ernakulam_district">Ernakulam</a>
+            </div>
+          </ul>
+
+        </li>
 
         <li class="nav-item dropdown  {% if 'flowerapp' in request.path %} active {% endif %}" >
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           flowerapp
+           Categories
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{% url 'flowerapp:allproduct' %}">all products</a></li>
@@ -25,10 +49,11 @@
         </li>
         {% if item_count > 0 %}
         <li class="nav-item">
-          <a class="nav-link"  href="{% url 'cartapp:cart_details' %} "><i class="fa fa-shopping-cart"></i>({{item_count}})</a>
+          <a class="nav-link"  href="{% url 'cartapp:cart_details' %} "><i class="fa fa-shopping-cart" ></i>({{item_count}})</a>
         </li>
         {% endif %}
       </div>
+
 
       <form class="d-flex" action="{% url 'searchapp: search_result' %}" method="get">
         {% csrf_token %}

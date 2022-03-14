@@ -23,6 +23,7 @@ urlpatterns = [
     path('flowerapp/', include('flowerapp.urls')),
     path('search/', include('searchapp.urls')),
     path('mycart/', include('cartapp.urls')),
+    path('details/', include('details.urls')),
 ]
 
 

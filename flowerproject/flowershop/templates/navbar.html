@@ -11,13 +11,10 @@
           <a class="nav-link" href="{% url  'flowerapp:allproduct' %}">home </a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="{% url  'details:add' %}">Register </a>
+           <a class="nav-link" href="{% url  'details:registration' %}">Register </a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" href="{% url  'details:login' %}">Login </a>
-        </li>
-        <li class="nav-item">
-           <a class="nav-link" href="{% url  'details:logout' %}">Logout </a>
+           <a class="nav-link" href="{% url  'details:loggin' %}">Login </a>
         </li>
         <li>
         <li class="nav-item dropdown  {% if 'flowerapp' in request.path %} active {% endif %}" >
@@ -29,10 +26,10 @@
               <a href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a><br>
               <a href="https://en.wikipedia.org/wiki/Kollam">Kollam</a><br>
               <a href="https://en.wikipedia.org/wiki/Alappuzha">Alappuzha</a>
-              <a href="https://en.wikipedia.org/wiki/Ernakulam_district">Ernakulam</a>
             </div>
           </ul>
 
+        </li>
         </li>
 
         <li class="nav-item dropdown  {% if 'flowerapp' in request.path %} active {% endif %}" >
